@@ -48,6 +48,7 @@ namespace Chap06_04
                     num.Enqueue(cal_func_blanket(text.Substring(0, i)));
                     oper.Enqueue(text[i]);
                     text = text.Remove(0, i + 1);
+                    i = 0;
                 }
             }
             num.Enqueue(cal_func_blanket(text));
@@ -84,6 +85,7 @@ namespace Chap06_04
                     num.Enqueue(cal_func_multipy(text.Substring(0,i)));
                     oper.Enqueue(text[i]);
                     text = text.Remove(0, i + 1);
+                    i = 0;
                 }
             }
             num.Enqueue(cal_func_multipy(text));
