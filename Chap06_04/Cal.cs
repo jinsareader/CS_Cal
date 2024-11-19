@@ -37,12 +37,15 @@ namespace Chap06_04
             Queue<double> num = new Queue<double>();
             Queue<char> oper = new Queue<char>();
             char temp;
+            int flg = 0;
 
             double result;
             if (text == null) return 1;
 
             for (int i = 1; i <text.Length; i++)
             {
+                if (text[i] == '(') flg++;
+                if (text[i] == ')') flg--;
                 if (text[i] == '*' || text[i] == '/')
                 {
                     num.Enqueue(cal_func_blanket(text.Substring(0, i)));
@@ -74,12 +77,16 @@ namespace Chap06_04
             Queue<double> num = new Queue<double>();
             Queue<char> oper = new Queue<char>();
             char temp;
+            int flg = 0;
 
             double result;
             if (text == null) return 0;
 
-            for (int i = 1; i < text.Length; i++)
+            for (int i = 0; i < text.Length; i++)
             {
+                if (i == 0 && text[i] == '-') continue;
+                if (text[i] == '(') flg++;
+                if (text[i] == ')') flg--;
                 if (text[i] == '+' || text[i] == '-')
                 {
                     num.Enqueue(cal_func_multipy(text.Substring(0,i)));
