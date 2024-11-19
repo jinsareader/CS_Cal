@@ -42,7 +42,7 @@ namespace Chap06_04
             double result;
             if (text == null) return 1;
 
-            for (int i = 1; i <text.Length; i++)
+            for (int i = 0; i <text.Length; i++)
             {
                 if (text[i] == '(') flg++;
                 if (text[i] == ')') flg--;
